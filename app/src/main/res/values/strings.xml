@@ -5,4 +5,13 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_splash_screen">splash_screen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="hearthstoneinfo">HearthStoneInfo</string>
+    <string name="title_activity_contacto">ContactoActivity</string>
+    <string name="title_activity_acerca_de">AcercaDeActivity</string>
+    <string name="title_activity_cartas">CartasActivity</string>
+    <string name="title_activity_mazos">MazosActivity</string>
 </resources>

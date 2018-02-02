@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashScreenActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,6 +19,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".ContactoActivity"
+            android:label="@string/title_activity_contacto"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AcercaDeActivity"
+            android:label="@string/title_activity_acerca_de"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CartasActivity"
+            android:label="@string/title_activity_cartas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MazosActivity"
+            android:label="@string/title_activity_mazos"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
