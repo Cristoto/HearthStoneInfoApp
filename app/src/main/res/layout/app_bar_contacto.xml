@@ -20,7 +20,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_contacto" />
+    <include layout="@layout/activity_contacto_tab" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

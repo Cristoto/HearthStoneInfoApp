@@ -35,6 +35,10 @@
         <activity
             android:name=".MazosActivity"
             android:label="@string/title_activity_mazos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ContactoTab"
+            android:label="@string/title_activity_contacto_tab"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

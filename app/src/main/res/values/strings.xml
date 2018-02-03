@@ -14,4 +14,16 @@
     <string name="title_activity_acerca_de">AcercaDeActivity</string>
     <string name="title_activity_cartas">CartasActivity</string>
     <string name="title_activity_mazos">MazosActivity</string>
+    <string name="title_activity_contacto_tab">ContactoTab</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="email">Email</string>
+    <string name="asunto">Asunto</string>
+    <string name="n_mero_de_tel_fono">Número de teléfono</string>
+    <string name="mensaje">Mensaje</string>
+    <string name="enviar">Enviar</string>
+    <string name="correo">Correo</string>
+    <string name="sms">SMS</string>
 </resources>
