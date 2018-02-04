@@ -1,5 +1,6 @@
 package com.hsi.hearthstoneinfo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -86,13 +87,21 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.inicio) {
             // Handle the camera action
         } else if (id == R.id.mazos) {
-
+            Intent intent = new Intent(this, MazosActivity.class);
+            startActivity(intent);
+            finish();
         } else if (id == R.id.cartas) {
-
+            Intent intent = new Intent(this, CartasActivity.class);
+            startActivity(intent);
+            finish();
         } else if (id == R.id.contacto) {
-
+            Intent intent = new Intent(this, ContactoActivity.class);
+            startActivity(intent);
+            finish();
         } else if (id == R.id.acercaDe) {
-
+            Intent intent = new Intent(this, AcercaDeActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
