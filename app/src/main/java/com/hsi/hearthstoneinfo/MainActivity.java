@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.inicio) {
-            // Handle the camera action
+
         } else if (id == R.id.mazos) {
             Intent intent = new Intent(this, MazosActivity.class);
             startActivity(intent);
