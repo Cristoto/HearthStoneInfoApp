@@ -19,7 +19,8 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-/*
+
+        //Ejecucion del sonido de inicio cuando se abre la aplicacion
         mediaPlayer = MediaPlayer.create(getBaseContext(),R.raw.intro);
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -28,7 +29,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 mediaPlayer.start();
             }
         });
-**/
+
 
         //Configurar para que esté en horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
