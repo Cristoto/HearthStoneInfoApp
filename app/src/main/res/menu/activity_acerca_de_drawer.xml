@@ -6,15 +6,15 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/inicio"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/simbolohearthstone"
             android:title="Inicio" />
         <item
             android:id="@+id/mazos"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/mazo"
             android:title="Mazos" />
         <item
             android:id="@+id/cartas"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/carta"
             android:title="Cartas" />
     </group>
 
@@ -22,11 +22,11 @@
         <menu>
             <item
                 android:id="@+id/contacto"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/contacto"
                 android:title="Contacto" />
             <item
                 android:id="@+id/acercaDe"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/acercade"
                 android:title="Acerca de" />
         </menu>
     </item>
