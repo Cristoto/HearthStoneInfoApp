@@ -28,7 +28,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 mediaPlayer.start();
             }
         });
-*/
+**/
 
         //Configurar para que esté en horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
