@@ -3,7 +3,6 @@ package com.hsi.hearthstoneinfo;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -20,15 +19,16 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+/*
         mediaPlayer = MediaPlayer.create(getBaseContext(),R.raw.intro);
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
+
                 mediaPlayer.start();
             }
         });
-
+*/
 
         //Configurar para que esté en horizontal
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
