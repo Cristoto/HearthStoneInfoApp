@@ -27,10 +27,12 @@
     <string name="enviar">Enviar</string>
     <string name="correo">Correo</string>
     <string name="sms">SMS</string>
+
     <string name="main_texto_explicacion">Bienvenido a HearthStoneInfo APP.\n\nEste es un juego dinámico de cartas, en el cual te podrás crear tus propios mazos
-        con las cientos de cartas que te ofrecen. Pero esta APP NO es el juego.\n\nAquí podrás únicamente crear tus propias cartas similares, y crear mazos con ellas,
-        ya que esto es una APP para salir del paso. Para hacer una búscqueda real de las cartas, utiliza nuestro programa de escritorio multiplataforma escrito en JAVA,
+        con las cientos de cartas que te ofrecen. Pero esta APP NO es el juego.\n\nAquí podrás únicamente crear tus propias cartas similares (para nada), y crear mazos con ellas,
+        ya que esto es una APP para salir del paso. Para hacer una búsqueda real de las cartas, utiliza nuestro programa de escritorio multiplataforma escrito en JAVA,
         HearthStoneInfo disponible en GitHub para su compilación y uso posterior.\n\nSi has llegado a leer hasta aquí, gracias por perder tu tiempo.</string>
+
     <string name="cartas_nombreText">Nombre</string>
     <string name="cartas_vidaText">Vida</string>
     <string name="cartas_ataqueText">Ataque</string>
@@ -39,4 +41,28 @@
     <string name="cartas_ataqueText_hint">Ataque de la carta</string>
     <string name="cartas_spinner_mazo">Mazo donde añadir la carta</string>
     <string name="cartas_button">Añadir</string>
+
+    <string name="mazos_button">Ajustes de mazo</string>
+    <string name="mazos_texto_ver">Puedes ver las cartas de estos mazos:</string>
+    <string name="title_activity_insertar_mazo">InsertarMazo</string>
+
+    <string name="insertarMazo_insertar_text">Insertar un mazo</string>
+    <string name="insertarMazo_insertar_hint">Nombre del mazo</string>
+    <string name="insertarMazo_insertar_button">Insertar</string>
+
+    <string name="insertarMazo_eliminar_text">Seleccione un mazo</string>
+    <string name="insertarMazo_eliminar_button">Eliminar</string>
+
+    <string name="insertarMazo_modificar_text">Seleccione para modificar un mazo</string>
+    <string name="insertarMazo_modificar_hint">Nuevo nombre</string>
+    <string name="insertarMazo_modificar_button">Modificar</string>
+    <string name="title_activity_ver_carta">VerCarta</string>
+
+    <string name="ver_carta_titulo">Información sobre la carta:</string>
+    <string name="ver_carta_nombre">Nombre:</string>
+    <string name="ver_carta_vida">Vida:</string>
+    <string name="ver_carta_ataque">Ataque:</string>
+    <string name="ver_carta_button">Eliminar</string>
+
+
 </resources>

@@ -12,9 +12,8 @@
         <activity
             android:name=".SplashScreenActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleInstance">
-
+            android:launchMode="singleInstance"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,6 +44,14 @@
             android:name=".ContactoTab"
             android:label="@string/title_activity_contacto_tab"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InsertarMazo"
+            android:label="@string/title_activity_insertar_mazo"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".VerCarta"
+            android:label="@string/title_activity_ver_carta"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
