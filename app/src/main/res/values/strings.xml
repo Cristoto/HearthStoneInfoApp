@@ -31,4 +31,12 @@
         con las cientos de cartas que te ofrecen. Pero esta APP NO es el juego.\n\nAquí podrás únicamente crear tus propias cartas similares, y crear mazos con ellas,
         ya que esto es una APP para salir del paso. Para hacer una búscqueda real de las cartas, utiliza nuestro programa de escritorio multiplataforma escrito en JAVA,
         HearthStoneInfo disponible en GitHub para su compilación y uso posterior.\n\nSi has llegado a leer hasta aquí, gracias por perder tu tiempo.</string>
+    <string name="cartas_nombreText">Nombre</string>
+    <string name="cartas_vidaText">Vida</string>
+    <string name="cartas_ataqueText">Ataque</string>
+    <string name="cartas_nombreText_hint">Nombre de la carta</string>
+    <string name="cartas_vidaText_hint">Vida de la carta</string>
+    <string name="cartas_ataqueText_hint">Ataque de la carta</string>
+    <string name="cartas_spinner_mazo">Mazo donde añadir la carta</string>
+    <string name="cartas_button">Añadir</string>
 </resources>
