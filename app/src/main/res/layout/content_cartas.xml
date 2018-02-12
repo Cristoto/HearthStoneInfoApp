@@ -117,6 +117,7 @@
         android:id="@+id/button"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
+        android:onClick="AñadirCartaButton"
         android:text="@string/cartas_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

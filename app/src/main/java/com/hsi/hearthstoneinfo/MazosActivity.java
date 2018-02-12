@@ -52,6 +52,10 @@ public class MazosActivity extends AppCompatActivity
         }
     }
 
+    public void AjusteMazoButtonPressed(View view){
+        Intent intent = new Intent(this, InsertarMazo.class);
+        startActivity(intent);
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

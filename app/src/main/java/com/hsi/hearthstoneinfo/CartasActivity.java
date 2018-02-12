@@ -53,6 +53,10 @@ public class CartasActivity extends AppCompatActivity
     }
 
 
+    public void AñadirCartaButton(View view){
+
+    }
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

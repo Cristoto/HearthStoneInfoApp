@@ -18,6 +18,7 @@
             android:id="@+id/crearButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="AjusteMazoButtonPressed"
             android:text="@string/mazos_button" />
 
         <TextView
