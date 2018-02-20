@@ -1,7 +1,7 @@
 package com.hsi.hearthstoneinfo.Entidades;
 
 /**
- * Created by xibhu on 20/02/2018.
+ * Created by Carlos - xibhu on 20/02/2018.
  */
 
 public class Carta {

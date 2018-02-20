@@ -1,7 +1,7 @@
 package com.hsi.hearthstoneinfo.BD;
 
 /**
- * Created by xibhu on 20/02/2018.
+ * Created by Carlos - xibhu on 20/02/2018.
  */
 
 public class InfoBD {
@@ -43,5 +43,6 @@ public class InfoBD {
             ")";
 
     final static String BORRAR_TABLA_CARTA = "DROP TABLE IF EXIST " + CARTA_TABLA;
+
 
 }
