@@ -11,9 +11,26 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import com.hsi.hearthstoneinfo.BD.ConnSQLiteHelper;
+import com.hsi.hearthstoneinfo.Entidades.Mazo;
+
+import java.util.ArrayList;
 
 public class CartasActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    Spinner mazoSpinner;
+    ArrayAdapter<Mazo> mazoSpinnerAdapter;
+    ArrayList<Mazo> mazoList;
+
+    EditText nombreEditText;
+    EditText vidaEditText;
+    EditText ataqueEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +57,17 @@ public class CartasActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mazoSpinner = findViewById(R.id.mazoSpinner);
+
+        nombreEditText = findViewById(R.id.nombreEditText);
+        vidaEditText = findViewById(R.id.vidaEditText);
+        ataqueEditText = findViewById(R.id.ataqueEditText);
+
+        actualizarSpinner();
+
     }
+
 
     @Override
     public void onBackPressed() {
@@ -51,13 +78,6 @@ public class CartasActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
-
-    public void AñadirCartaButton(View view){
-
-    }
-
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -88,4 +108,20 @@ public class CartasActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
+    public void actualizarSpinner(){
+
+        ConnSQLiteHelper c = new ConnSQLiteHelper(this);
+        mazoList = c.consultarTodosMazos();
+        mazoSpinnerAdapter = new ArrayAdapter<Mazo>(this, R.layout.support_simple_spinner_dropdown_item, mazoList);
+        mazoSpinner.setAdapter(mazoSpinnerAdapter);
+
+    }
+
+    public void onInsertarButtonAction(View view){
+
+    }
+
 }

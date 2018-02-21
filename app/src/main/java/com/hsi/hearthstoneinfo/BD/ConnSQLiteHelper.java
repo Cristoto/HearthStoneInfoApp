@@ -17,10 +17,21 @@ import java.util.ArrayList;
 
 public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
+    /**
+     * Constructor por defecto.
+     * @param context
+     * @param name
+     * @param factory
+     * @param version
+     */
     public ConnSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
+    /**
+     * Constructor generado custom, que automáticamente recoge los valores necesarios de la clase InfoBD.
+     * @param context
+     */
     public ConnSQLiteHelper(Context context){
         this(context, InfoBD.BD_NOMBRE, null, InfoBD.BD_VERSION);
     }
@@ -39,6 +50,11 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
     }
 
     //FUNCIONES DE MAZO
+
+    /**
+     * Insertar un mazo nuevo dándole un nombre.
+     * @param nombre Nombre que se le quiere dar al nuevo mazo que se insertará.
+     */
     public void insertarMazo(String nombre){
 
         ContentValues v = new ContentValues();
@@ -48,6 +64,10 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
         close();
     }
 
+    /**
+     * Eliminar mazo a través de su ID.
+     * @param id_mazo ID del mazo que se quiere eliminar.
+     */
     public void eliminarMazo(Integer id_mazo){
 
         String[] parametros = {id_mazo + ""};
@@ -56,6 +76,11 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Consultar un mazo concreto a través de su ID.
+     * @param id_mazo ID del mazo que se quiere consultar.
+     * @return Mazo, con los atributos recogidos de la base de datos.
+     */
     public Mazo consultarMazo(Integer id_mazo) {
 
         String[] parametros = {id_mazo.toString()};
@@ -70,6 +95,10 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
         return m;
     }
 
+    /**
+     * Consultar todos los mazos de la base de datos.
+     * @return ArrayList<Mazo> con todos los mazos que se han recogido.
+     */
     public ArrayList<Mazo> consultarTodosMazos(){
         ArrayList<Mazo> mazos = new ArrayList<>();
 
@@ -83,6 +112,11 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
         return mazos;
     }
 
+    /**
+     * Modificar el nombre de un mazo existente.
+     * @param id_mazo ID del mazo que se quiere modificar.
+     * @param nombre Nuevo nombre que se le quiere dar al mazo.
+     */
     public void modificarMazo(Integer id_mazo, String nombre){
 
         ContentValues values = new ContentValues();
@@ -93,6 +127,9 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
         getWritableDatabase().update(InfoBD.MAZO_TABLA, values, InfoBD.MAZO_ID + "=?", parametros);
         close();
     }
+
+
+
 
     //FUNCIONES DE CARTA
     public void insertarCarta(Integer id_mazo, String nombre, String vida, String ataque){
@@ -108,6 +145,10 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
     }
 
     public void consultarCartasDeMazo(Integer id_mazo){
+
+    }
+
+    public void consultarCartasCantidad(){
 
     }
 
