@@ -5,6 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
+
+import com.hsi.hearthstoneinfo.Entidades.Mazo;
+
+import java.util.ArrayList;
 
 /**
  * Created by Carlos - xibhu on 20/02/2018.
@@ -40,25 +45,53 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
         v.put(InfoBD.MAZO_NOMBRE, nombre);
         getWritableDatabase().insert(InfoBD.MAZO_TABLA, null, v);
 
+        close();
     }
 
     public void eliminarMazo(Integer id_mazo){
 
+        String[] parametros = {id_mazo + ""};
+        getWritableDatabase().delete(InfoBD.MAZO_TABLA, InfoBD.MAZO_ID + " = ?", parametros);
+        close();
+
     }
 
-    public String consultarMazo(Integer id_mazo) {
+    public Mazo consultarMazo(Integer id_mazo) {
 
         String[] parametros = {id_mazo.toString()};
-        String[] campos = {InfoBD.MAZO_NOMBRE};
+        String[] campos = {InfoBD.MAZO_ID, InfoBD.MAZO_NOMBRE};
 
-        Cursor c = getReadableDatabase().query(InfoBD.MAZO_TABLA, campos, InfoBD.MAZO_ID + "=?", parametros, null, null, null);
+        Cursor c = getReadableDatabase().query(InfoBD.MAZO_TABLA, campos, InfoBD.MAZO_ID + "= ?", parametros, null, null, null);
         c.moveToFirst();
 
-        return c.getString(0);
+        Mazo m = new Mazo(c.getInt(0), c.getString(1));
+        close();
+
+        return m;
     }
 
-    public void modificarMazo(Integer id_mazo){
+    public ArrayList<Mazo> consultarTodosMazos(){
+        ArrayList<Mazo> mazos = new ArrayList<>();
 
+        String[] campos = {InfoBD.MAZO_ID, InfoBD.MAZO_NOMBRE};
+        Cursor c = getReadableDatabase().query(InfoBD.MAZO_TABLA, campos, null, null, null, null, null);
+
+        while (c.moveToNext()){
+            mazos.add(new Mazo(c.getInt(0), c.getString(1)));
+        }
+        close();
+        return mazos;
+    }
+
+    public void modificarMazo(Integer id_mazo, String nombre){
+
+        ContentValues values = new ContentValues();
+        values.put(InfoBD.MAZO_NOMBRE, nombre);
+
+        String[] parametros = {id_mazo + ""};
+
+        getWritableDatabase().update(InfoBD.MAZO_TABLA, values, InfoBD.MAZO_ID + "=?", parametros);
+        close();
     }
 
     //FUNCIONES DE CARTA

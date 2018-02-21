@@ -6,14 +6,12 @@ package com.hsi.hearthstoneinfo.Entidades;
 
 public class Carta {
 
-    private Integer id;
-    private Integer id_mazo;
     private String nombre;
+    private Integer id_mazo;
     private Integer vida;
     private Integer ataque;
 
-    public Carta(Integer id, Integer id_mazo, String nombre, Integer vida, Integer ataque) {
-        this.id = id;
+    public Carta(Integer id_mazo, String nombre, Integer vida, Integer ataque) {
         this.id_mazo = id_mazo;
         this.nombre = nombre;
         this.vida = vida;
@@ -22,14 +20,6 @@ public class Carta {
 
     public Carta(){
 
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Integer getId_mazo() {

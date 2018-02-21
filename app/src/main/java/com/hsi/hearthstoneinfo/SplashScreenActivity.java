@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Window;
 
 import com.hsi.hearthstoneinfo.BD.ConnSQLiteHelper;
+import com.hsi.hearthstoneinfo.BD.InfoBD;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -21,7 +22,6 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         //Ejecucion del sonido de inicio cuando se abre la aplicacion
         mediaPlayer = MediaPlayer.create(getBaseContext(),R.raw.intro);
