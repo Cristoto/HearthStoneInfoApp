@@ -132,7 +132,17 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
 
     //FUNCIONES DE CARTA
-    public void insertarCarta(Integer id_mazo, String nombre, String vida, String ataque){
+    public void insertarCarta(Integer id_mazo, String nombre, Integer vida, Integer ataque){
+
+        ContentValues v = new ContentValues();
+        v.put(InfoBD.CARTA_ID_MAZO, id_mazo);
+        v.put(InfoBD.CARTA_NOMBRE, nombre);
+        v.put(InfoBD.CARTA_VIDA, vida);
+        v.put(InfoBD.CARTA_ATAQUE, ataque);
+
+        getWritableDatabase().insert(InfoBD.CARTA_TABLA, null, v);
+
+        close();
 
     }
 

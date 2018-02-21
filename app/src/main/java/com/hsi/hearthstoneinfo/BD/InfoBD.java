@@ -27,9 +27,8 @@ public class InfoBD {
     //TABLA CARTA
     //Información acerca de la tabla de cartas, para ser utilizada por otras clases
     public final static String CARTA_TABLA = "carta";
-    public final static String CARTA_ID = "id";
-    public final static String CARTA_ID_MAZO = "id_mazo";
     public final static String CARTA_NOMBRE = "nombre";
+    public final static String CARTA_ID_MAZO = "id_mazo";
     public final static String CARTA_VIDA = "vida";
     public final static String CARTA_ATAQUE = "ataque";
 

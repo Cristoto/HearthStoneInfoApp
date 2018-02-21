@@ -120,7 +120,19 @@ public class CartasActivity extends AppCompatActivity
 
     }
 
+    //TODO hacer comprobaciones pertinentes
     public void onInsertarButtonAction(View view){
+
+        Mazo m = (Mazo)mazoSpinner.getSelectedItem();
+
+        ConnSQLiteHelper c = new ConnSQLiteHelper(this);
+
+        Integer v = Integer.valueOf(vidaEditText.getText().toString());
+        Integer a = Integer.valueOf(ataqueEditText.getText().toString());
+        c.insertarCarta(m.getId(), nombreEditText.getText().toString(), v, a);
+
+
+
 
     }
 
