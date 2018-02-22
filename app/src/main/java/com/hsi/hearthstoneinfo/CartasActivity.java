@@ -131,9 +131,6 @@ public class CartasActivity extends AppCompatActivity
         Integer a = Integer.valueOf(ataqueEditText.getText().toString());
         c.insertarCarta(m.getId(), nombreEditText.getText().toString(), v, a);
 
-
-
-
     }
 
 }

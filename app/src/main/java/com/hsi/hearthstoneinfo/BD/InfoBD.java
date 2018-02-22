@@ -8,6 +8,7 @@ public class InfoBD {
 
     //Nombre de la base de datos
     public final static String BD_NOMBRE = "bd_hearthstone";
+    //Versión de la base de datos, utilizada para que en las actualizaciones de la APP, si es necesario, modificar las tablas mediante el onUpgrade de la clase ConnSQLiteHelper
     public final static Integer BD_VERSION = 1;
 
     //TABLA MAZO

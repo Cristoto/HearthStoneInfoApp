@@ -11,9 +11,31 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.hsi.hearthstoneinfo.BD.ConnSQLiteHelper;
+import com.hsi.hearthstoneinfo.Entidades.Carta;
+import com.hsi.hearthstoneinfo.Entidades.Mazo;
+
+import java.util.ArrayList;
 
 public class MazosActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Spinner mazosSpinner;
+
+    ArrayList<Mazo> mazoSpinnerArray;
+    ArrayAdapter<Mazo> mazoSpinnerAdapter;
+
+
+    ListView mazoListView;
+
+    ArrayList<Carta> mazoListArray;
+    ArrayAdapter<Carta> mazoAdapterListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +62,72 @@ public class MazosActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mazosSpinner = findViewById(R.id.mazosSpinner);
+        mazoListView = findViewById(R.id.mazosListView);
+
+        mazoSpinnerArray = new ArrayList<>();
+        mazoListArray = new ArrayList<>();
+
+        actualizarSpinner();
+
+        mazosSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Mazo m = (Mazo)adapterView.getItemAtPosition(i);
+                rellenarList(m);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        mazoListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Carta c = (Carta)adapterView.getItemAtPosition(i);
+
+                verCarta(c);
+
+            }
+        });
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        actualizarSpinner();
+    }
+
+    public void verCarta(Carta c){
+        Intent i = new Intent(this, VerCarta.class);
+        i.putExtra("carta", c);
+        startActivity(i);
+    }
+
+
+    public void actualizarSpinner(){
+
+        ConnSQLiteHelper c = new ConnSQLiteHelper(this);
+        mazoSpinnerArray = c.consultarTodosMazos();
+        mazoSpinnerAdapter = new ArrayAdapter<Mazo>(this, R.layout.support_simple_spinner_dropdown_item, mazoSpinnerArray);
+        mazosSpinner.setAdapter(mazoSpinnerAdapter);
+
+    }
+
+    public void rellenarList(Mazo m){
+
+        ConnSQLiteHelper c = new ConnSQLiteHelper(this);
+        mazoListArray = c.consultarCartasDeMazo(m.getId());
+        mazoAdapterListView = new ArrayAdapter<Carta>(this, android.R.layout.simple_list_item_1, mazoListArray);
+        mazoListView.setAdapter(mazoAdapterListView);
+
     }
 
     @Override

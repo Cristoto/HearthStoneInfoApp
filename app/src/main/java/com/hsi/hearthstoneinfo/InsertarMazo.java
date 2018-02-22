@@ -74,7 +74,7 @@ public class InsertarMazo extends AppCompatActivity {
                 c.insertarMazo(insertarEditText.getText().toString());
                 Toast.makeText(this, "Mazo insertado", Toast.LENGTH_SHORT).show();
                 actualizarSpinner();
-
+                insertarEditText.setText("");
             }catch (Exception e){
 
                 Toast.makeText(this, "Error al insertar mazo", Toast.LENGTH_SHORT).show();

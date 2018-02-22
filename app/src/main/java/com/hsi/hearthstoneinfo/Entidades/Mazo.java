@@ -1,10 +1,12 @@
 package com.hsi.hearthstoneinfo.Entidades;
 
+import java.io.Serializable;
+
 /**
  * Created by Carlos - xibhu on 20/02/2018.
  */
 
-public class Mazo {
+public class Mazo implements Serializable{
 
     private Integer id;
     private String nombre;

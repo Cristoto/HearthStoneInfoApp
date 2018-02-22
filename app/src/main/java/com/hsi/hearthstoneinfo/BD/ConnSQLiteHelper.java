@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import com.hsi.hearthstoneinfo.Entidades.Carta;
 import com.hsi.hearthstoneinfo.Entidades.Mazo;
 
 import java.util.ArrayList;
@@ -146,7 +147,11 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
     }
 
-    public void eliminarCarta(Integer id_carta){
+    public void eliminarCarta(Integer id_mazo ,String nombre){
+
+        String[] parametros = {nombre, String.valueOf(id_mazo)};
+        getWritableDatabase().delete(InfoBD.CARTA_TABLA, InfoBD.CARTA_NOMBRE + " = ? and " + InfoBD.CARTA_ID_MAZO + " = ?", parametros);
+        close();
 
     }
 
@@ -154,8 +159,20 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
     }
 
-    public void consultarCartasDeMazo(Integer id_mazo){
+    public ArrayList<Carta> consultarCartasDeMazo(Integer id_mazo){
+        ArrayList<Carta> cartas = new ArrayList<>();
 
+        String[] parametros = {String.valueOf(id_mazo)};
+
+        String[] campos = { InfoBD.CARTA_ID_MAZO, InfoBD.CARTA_NOMBRE, InfoBD.CARTA_VIDA, InfoBD.CARTA_ATAQUE};
+        Cursor c = getReadableDatabase().query(InfoBD.CARTA_TABLA, campos, InfoBD.CARTA_ID_MAZO + "=?", parametros, null, null, null);
+
+        while (c.moveToNext()){
+            cartas.add(new Carta(c.getInt(0), c.getString(1), c.getInt(2), c.getInt(3)));
+        }
+        close();
+
+        return cartas;
     }
 
     public void consultarCartasCantidad(){

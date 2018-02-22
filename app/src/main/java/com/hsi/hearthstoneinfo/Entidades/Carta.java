@@ -1,10 +1,12 @@
 package com.hsi.hearthstoneinfo.Entidades;
 
+import java.io.Serializable;
+
 /**
  * Created by Carlos - xibhu on 20/02/2018.
  */
 
-public class Carta {
+public class Carta implements Serializable{
 
     private String nombre;
     private Integer id_mazo;
@@ -52,5 +54,10 @@ public class Carta {
 
     public void setAtaque(Integer ataque) {
         this.ataque = ataque;
+    }
+
+    @Override
+    public String toString() {
+        return getNombre();
     }
 }
