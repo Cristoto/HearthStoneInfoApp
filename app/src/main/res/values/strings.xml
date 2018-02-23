@@ -35,9 +35,11 @@
     <string name="acerca_de2">Realizado por\nCristo y Carlos</string>
 
     <string name="main_texto_explicacion">Bienvenido a HearthStoneInfo APP.\n\nEste es un juego dinámico de cartas, en el cual te podrás crear tus propios mazos
-        con las cientos de cartas que te ofrecen. Pero esta APP NO es el juego.\n\nAquí podrás únicamente crear tus propias cartas similares (para nada), y crear mazos con ellas,
-        ya que esto es una APP para salir del paso. Para hacer una búsqueda real de las cartas, utiliza nuestro programa de escritorio multiplataforma escrito en JAVA,
-        HearthStoneInfo disponible en GitHub para su compilación y uso posterior.\n\nSi has llegado a leer hasta aquí, gracias por perder tu tiempo.</string>
+        con las cientos de cartas que te ofrecen y podrás conseguir, luchar contra los demás jugadores, y derrotar a los jefes de las expansiones. Pero esta APP NO es el juego.
+        \n\nAquí podrás únicamente crear tus propias cartas similares (para nada), y crear mazos con ellas y poco más,
+        ya que esto es una APP para salir del paso y no es nada funcional (pero si lleva mucho código por debajo, aunque la interfaz sea tan simple).
+        \n\nPara hacer una búsqueda real de las cartas, utiliza nuestro programa de escritorio multiplataforma escrito en JAVA,
+        HearthStoneInfo disponible en GitHub para su clonación, compilación y uso posterior.\n\nSi has llegado a leer hasta aquí, gracias por perder tu tiempo.</string>
 
     <string name="cartas_nombreText">Nombre</string>
     <string name="cartas_vidaText">Vida</string>
