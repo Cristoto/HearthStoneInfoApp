@@ -31,6 +31,9 @@
     <string name="correo">Correo</string>
     <string name="sms">SMS</string>
 
+    <string name="acerca_de1">HearthStoneInfoApp no tiene vinculación con Blizzard ni sus productos.</string>
+    <string name="acerca_de2">Realizado por\nCristo y Carlos</string>
+
     <string name="main_texto_explicacion">Bienvenido a HearthStoneInfo APP.\n\nEste es un juego dinámico de cartas, en el cual te podrás crear tus propios mazos
         con las cientos de cartas que te ofrecen. Pero esta APP NO es el juego.\n\nAquí podrás únicamente crear tus propias cartas similares (para nada), y crear mazos con ellas,
         ya que esto es una APP para salir del paso. Para hacer una búsqueda real de las cartas, utiliza nuestro programa de escritorio multiplataforma escrito en JAVA,
@@ -66,6 +69,7 @@
     <string name="ver_carta_vida">Vida:</string>
     <string name="ver_carta_ataque">Ataque:</string>
     <string name="ver_carta_button">Eliminar</string>
+
 
 
 </resources>
