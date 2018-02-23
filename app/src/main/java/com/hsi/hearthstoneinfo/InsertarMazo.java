@@ -61,6 +61,7 @@ public class InsertarMazo extends AppCompatActivity {
 
     /**
      * Botón insertar, se recoge el string del EditText de la interfaz, y se hace la inserción en la base de datos.
+     * No se permiten mazos con nombres iguales, se hace la comprobación.
      * @param view
      */
     public void onInsertarButtonAction(View view){
