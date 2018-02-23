@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.hsi.hearthstoneinfo.BD.ConnSQLiteHelper;
 import com.hsi.hearthstoneinfo.Entidades.Carta;
@@ -36,6 +37,8 @@ public class MazosActivity extends AppCompatActivity
     ListView mazoListView;
     ArrayList<Carta> mazoListArray;
     ArrayAdapter<Carta> mazoAdapterListView;
+
+    TextView cartasTotales;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,8 @@ public class MazosActivity extends AppCompatActivity
         mazoSpinnerArray = new ArrayList<>();
         mazoListArray = new ArrayList<>();
 
+        cartasTotales = findViewById(R.id.cartasTotales);
+
         actualizarSpinner();
 
         /**
@@ -81,6 +86,7 @@ public class MazosActivity extends AppCompatActivity
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 Mazo m = (Mazo)adapterView.getItemAtPosition(i);
+
                 rellenarList(m);
             }
 
@@ -150,6 +156,7 @@ public class MazosActivity extends AppCompatActivity
         mazoAdapterListView = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mazoListArray);
         mazoListView.setAdapter(mazoAdapterListView);
 
+        cartasTotales.setText(c.consultarCartasCantidad(m.getId())+"/15");
     }
 
     /**

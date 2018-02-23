@@ -19,6 +19,7 @@
             android:id="@+id/crearButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:onClick="AjusteMazoButtonPressed"
             android:text="@string/mazos_button" />
 
@@ -27,9 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:text="@string/mazos_texto_ver"
+            android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold|italic" />
 
@@ -38,6 +38,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:id="@+id/cartasTotales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="X/X"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ListView
             android:id="@+id/mazosListView"

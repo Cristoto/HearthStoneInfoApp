@@ -232,4 +232,21 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    /**
+     * Comprueba si una carta ya existe.
+     * @param nombre Nombre de la carta que se quiere comprobar si ya existe.
+     * @return TRUE cuando SI existe una carta llamada igual. FALSE cuando NO existe una carta llamada igual.
+     */
+    public boolean consultarCartaExisteEnMazo(Integer id_mazo, String nombre){
+        String consulta = "select count(*) from " + InfoBD.CARTA_TABLA + " where " + InfoBD.CARTA_NOMBRE + " = '" + nombre + "' and " + InfoBD.CARTA_ID_MAZO + " = " + id_mazo;
+
+        Cursor mCount= getReadableDatabase().rawQuery(consulta, null);
+        mCount.moveToFirst();
+        int count= mCount.getInt(0);
+        mCount.close();
+        close();
+
+        return count != 0;
+    }
+
 }
