@@ -12,7 +12,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <Button
             android:id="@+id/crearButton"
@@ -25,12 +26,18 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/mazos_texto_ver" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/mazos_texto_ver"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
 
         <Spinner
             android:id="@+id/mazosSpinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp" />
 
         <ListView
             android:id="@+id/mazosListView"
