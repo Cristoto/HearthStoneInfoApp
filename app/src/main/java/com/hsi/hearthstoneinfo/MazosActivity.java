@@ -119,6 +119,7 @@ public class MazosActivity extends AppCompatActivity
         mazoSpinnerAdapter = new ArrayAdapter<Mazo>(this, R.layout.support_simple_spinner_dropdown_item, mazoSpinnerArray);
         mazosSpinner.setAdapter(mazoSpinnerAdapter);
 
+
     }
 
     public void rellenarList(Mazo m){

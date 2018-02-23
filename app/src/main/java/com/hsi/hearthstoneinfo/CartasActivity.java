@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.hsi.hearthstoneinfo.BD.ConnSQLiteHelper;
+import com.hsi.hearthstoneinfo.Entidades.Carta;
 import com.hsi.hearthstoneinfo.Entidades.Mazo;
 
 import java.util.ArrayList;
@@ -124,12 +125,16 @@ public class CartasActivity extends AppCompatActivity
     public void onInsertarButtonAction(View view){
 
         Mazo m = (Mazo)mazoSpinner.getSelectedItem();
+        Carta carta = new Carta();
+
+
+        carta.setNombre(nombreEditText.getText().toString());
+        carta.setVida(Integer.valueOf(vidaEditText.getText().toString()));
+        carta.setAtaque(Integer.valueOf(ataqueEditText.getText().toString()));
+
 
         ConnSQLiteHelper c = new ConnSQLiteHelper(this);
-
-        Integer v = Integer.valueOf(vidaEditText.getText().toString());
-        Integer a = Integer.valueOf(ataqueEditText.getText().toString());
-        c.insertarCarta(m.getId(), nombreEditText.getText().toString(), v, a);
+        c.insertarCarta(m, carta);
 
     }
 

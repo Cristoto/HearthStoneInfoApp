@@ -16,6 +16,8 @@ import java.util.ArrayList;
  * Created by Carlos - xibhu on 20/02/2018.
  */
 
+
+//TODO HACER QUE LAS CLASES RECIBAN clases MAZO Y CARTA para hacer los getters
 public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
     /**
@@ -133,13 +135,19 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
 
     //FUNCIONES DE CARTA
-    public void insertarCarta(Integer id_mazo, String nombre, Integer vida, Integer ataque){
+
+    /**
+     * Insertar una carta en un mazo concreto.
+     * @param m Mazo en el que se quiere insertar la carta.
+     * @param c Carta (sin id de mazo) que se quiere insertar.
+     */
+    public void insertarCarta(Mazo m, Carta c){
 
         ContentValues v = new ContentValues();
-        v.put(InfoBD.CARTA_ID_MAZO, id_mazo);
-        v.put(InfoBD.CARTA_NOMBRE, nombre);
-        v.put(InfoBD.CARTA_VIDA, vida);
-        v.put(InfoBD.CARTA_ATAQUE, ataque);
+        v.put(InfoBD.CARTA_ID_MAZO, m.getId());
+        v.put(InfoBD.CARTA_NOMBRE, c.getNombre());
+        v.put(InfoBD.CARTA_VIDA, c.getVida());
+        v.put(InfoBD.CARTA_ATAQUE, c.getAtaque());
 
         getWritableDatabase().insert(InfoBD.CARTA_TABLA, null, v);
 
@@ -147,6 +155,11 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * Eliminar una carta de un mazo en concreto.
+     * @param id_mazo Mazo del que se quiere eliminar una carta.
+     * @param nombre Nombre de la carta que se quiere eliminar.
+     */
     public void eliminarCarta(Integer id_mazo ,String nombre){
 
         String[] parametros = {nombre, String.valueOf(id_mazo)};
@@ -155,10 +168,11 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
     }
 
-    public void consultarCarta(Integer id_carta){
-
-    }
-
+    /**
+     * Devuelve todas las cartas de un mazo concreto.
+     * @param id_mazo Mazo del que se quiere saber todas las cartas.
+     * @return ArrayList<Carta> con todas las cartas de ese mazo.
+     */
     public ArrayList<Carta> consultarCartasDeMazo(Integer id_mazo){
         ArrayList<Carta> cartas = new ArrayList<>();
 
@@ -175,12 +189,20 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
         return cartas;
     }
 
-    public void consultarCartasCantidad(){
+    /**
+     * Devuelve la cantidad total de cartas de un mazo concreto
+     * @param id_mazo Mazo del que se quiere saber la cantidad de cartas.
+     * @return Integer con el número de cartas.
+     */
+    public int  consultarCartasCantidad(Integer id_mazo){
+        String consulta = "select count(*) from " + InfoBD.CARTA_TABLA + " where " + InfoBD.CARTA_ID_MAZO + " = " + String.valueOf(id_mazo);
 
-    }
-
-    public void modificarCarta(){
-
+        Cursor mCount= getReadableDatabase().rawQuery(consulta, null);
+        mCount.moveToFirst();
+        int count= mCount.getInt(0);
+        mCount.close();
+        close();
+        return count;
     }
 
 }

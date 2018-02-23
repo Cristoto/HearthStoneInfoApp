@@ -69,17 +69,18 @@ public class InsertarMazo extends AppCompatActivity {
         ConnSQLiteHelper c = new ConnSQLiteHelper(this);
 
         if(!insertarEditText.getText().toString().equals("")){
-            try{
 
+            try{
                 c.insertarMazo(insertarEditText.getText().toString());
                 Toast.makeText(this, "Mazo insertado", Toast.LENGTH_SHORT).show();
                 actualizarSpinner();
                 insertarEditText.setText("");
             }catch (Exception e){
-
                 Toast.makeText(this, "Error al insertar mazo", Toast.LENGTH_SHORT).show();
-
             }
+
+
+
         }else{
 
             Toast.makeText(this, "Introduce nombre", Toast.LENGTH_SHORT).show();
