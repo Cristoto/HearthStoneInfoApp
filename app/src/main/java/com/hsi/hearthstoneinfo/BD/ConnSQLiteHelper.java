@@ -99,6 +99,23 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
     }
 
     /**
+     * Indica si ya existe un mazo con el nombre indicado.
+     * @param nombre Nombre del mazo del que se quiere saber si existe.
+     * @return TRUE en el caso de que SI exista el nombre. FALSE en el caso de que NO exista el nombre.
+     */
+    public boolean consultarMazoExisteNombre(String nombre){
+        String consulta = "select count(*) from " + InfoBD.MAZO_TABLA + " where " + InfoBD.MAZO_NOMBRE + " = '" + nombre + "'";
+
+        Cursor mCount= getReadableDatabase().rawQuery(consulta, null);
+        mCount.moveToFirst();
+        int count= mCount.getInt(0);
+        mCount.close();
+        close();
+
+        return count != 0;
+    }
+
+    /**
      * Consultar todos los mazos de la base de datos.
      * @return ArrayList<Mazo> con todos los mazos que se han recogido.
      */

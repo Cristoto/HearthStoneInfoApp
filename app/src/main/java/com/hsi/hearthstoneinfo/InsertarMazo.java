@@ -63,28 +63,27 @@ public class InsertarMazo extends AppCompatActivity {
      * Botón insertar, se recoge el string del EditText de la interfaz, y se hace la inserción en la base de datos.
      * @param view
      */
-    //TODO comprobar que no hayan más de 10 cartas por mazo
     public void onInsertarButtonAction(View view){
 
         ConnSQLiteHelper c = new ConnSQLiteHelper(this);
-
+        String nombreMazo = insertarEditText.getText().toString();
         if(!insertarEditText.getText().toString().equals("")){
 
-            try{
-                c.insertarMazo(insertarEditText.getText().toString());
-                Toast.makeText(this, "Mazo insertado", Toast.LENGTH_SHORT).show();
-                actualizarSpinner();
-                insertarEditText.setText("");
-            }catch (Exception e){
-                Toast.makeText(this, "Error al insertar mazo", Toast.LENGTH_SHORT).show();
+            if (!c.consultarMazoExisteNombre(nombreMazo)){
+                try{
+                    c.insertarMazo(nombreMazo);
+                    Toast.makeText(this, "Mazo insertado", Toast.LENGTH_SHORT).show();
+                    actualizarSpinner();
+                    insertarEditText.setText("");
+                }catch (Exception e){
+                    Toast.makeText(this, "Error al insertar mazo", Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Toast.makeText(this, "Ya existe un mazo con ese nombre", Toast.LENGTH_SHORT).show();
             }
 
-
-
         }else{
-
             Toast.makeText(this, "Introduce nombre", Toast.LENGTH_SHORT).show();
-
         }
 
     }
@@ -93,16 +92,15 @@ public class InsertarMazo extends AppCompatActivity {
      * Botón eliminar, se recoge del spinner el mazo que se quiere eliminar, y se hace la eliminación.
      * @param view
      */
-
-    //TODO hacer comprobación de cartas, y si hay borrar las cartas antes del mazo.
     public void onEliminarButtonAction(View view){
-
+        ConnSQLiteHelper c = new ConnSQLiteHelper(this);
         if(eliminarMazoSpinner.getSelectedItem() != null){
             Mazo m = (Mazo)eliminarMazoSpinner.getSelectedItem();
 
+            if (c.consultarCartasCantidad(m.getId()) != 0){
+                c.eliminarCartasDeMazo(m.getId());
+            }
             try{
-
-                ConnSQLiteHelper c = new ConnSQLiteHelper(this);
                 c.eliminarMazo(m.getId());
                 Toast.makeText(this, "Mazo eliminado", Toast.LENGTH_SHORT).show();
                 actualizarSpinner();
