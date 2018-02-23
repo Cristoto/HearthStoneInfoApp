@@ -169,6 +169,16 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
     }
 
     /**
+     * Eliminar todas las cartas de un mazo.
+     * @param id_mazo Mazo del que se quiere eliminar todas sus cartas.
+     */
+    public void eliminarCartasDeMazo(Integer id_mazo){
+        String[] parametros = {String.valueOf(id_mazo)};
+        getWritableDatabase().delete(InfoBD.CARTA_TABLA, InfoBD.CARTA_ID_MAZO + " = ?", parametros);
+        close();
+    }
+
+    /**
      * Devuelve todas las cartas de un mazo concreto.
      * @param id_mazo Mazo del que se quiere saber todas las cartas.
      * @return ArrayList<Carta> con todas las cartas de ese mazo.
