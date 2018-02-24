@@ -20,63 +20,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"
-
-            android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
-        <activity
-            android:name=".ContactoActivity"
-            android:label="@string/title_activity_contacto"
-            android:theme="@style/AppTheme.NoActionBar"
-
-            android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AcercaDeActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_acerca_de"
-            android:theme="@style/AppTheme.NoActionBar"
-
-            android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CartasActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_cartas"
-            android:theme="@style/AppTheme.NoActionBar"
-
-            android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MazosActivity"
+            android:configChanges="orientation"
             android:label="@string/title_activity_mazos"
-            android:theme="@style/AppTheme.NoActionBar"
-
-            android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
-        <activity
-            android:name=".ContactoTab"
-            android:label="@string/title_activity_contacto_tab"
-            android:theme="@style/AppTheme.NoActionBar"
-
-            android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".InsertarMazo"
+            android:configChanges="orientation"
             android:label="@string/title_activity_insertar_mazo"
-            android:theme="@style/AppTheme.NoActionBar"
-
-            android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".VerCarta"
+            android:configChanges="orientation"
             android:label="@string/title_activity_ver_carta"
-            android:theme="@style/AppTheme.NoActionBar"
-
-            android:configChanges = "orientation"
-            android:screenOrientation = "portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ContactameActivity"
+            android:label="@string/title_activity_contactame"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

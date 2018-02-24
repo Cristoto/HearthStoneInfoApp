@@ -51,7 +51,7 @@ public class MazosActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MazosActivity.this, ContactoActivity.class);
+                Intent intent = new Intent(MazosActivity.this, ContactameActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -199,7 +199,7 @@ public class MazosActivity extends AppCompatActivity
             startActivity(intent);
             finish();
         } else if (id == R.id.contacto) {
-            Intent intent = new Intent(this, ContactoActivity.class);
+            Intent intent = new Intent(this, ContactameActivity.class);
             startActivity(intent);
             finish();
         } else if (id == R.id.acercaDe) {

@@ -50,7 +50,7 @@ public class CartasActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CartasActivity.this, ContactoActivity.class);
+                Intent intent = new Intent(CartasActivity.this, ContactameActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -120,7 +120,7 @@ public class CartasActivity extends AppCompatActivity
         } else if (id == R.id.cartas) {
 
         } else if (id == R.id.contacto) {
-            Intent intent = new Intent(this, ContactoActivity.class);
+            Intent intent = new Intent(this, ContactameActivity.class);
             startActivity(intent);
             finish();
         } else if (id == R.id.acercaDe) {

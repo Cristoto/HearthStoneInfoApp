@@ -26,7 +26,7 @@ public class AcercaDeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AcercaDeActivity.this, ContactoActivity.class);
+                Intent intent = new Intent(AcercaDeActivity.this, ContactameActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -72,7 +72,7 @@ public class AcercaDeActivity extends AppCompatActivity
             startActivity(intent);
             finish();
         } else if (id == R.id.contacto) {
-            Intent intent = new Intent(this, ContactoActivity.class);
+            Intent intent = new Intent(this, ContactameActivity.class);
             startActivity(intent);
             finish();
         } else if (id == R.id.acercaDe) {

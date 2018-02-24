@@ -71,7 +71,7 @@
     <string name="ver_carta_vida">Vida:</string>
     <string name="ver_carta_ataque">Ataque:</string>
     <string name="ver_carta_button">Eliminar</string>
-
+    <string name="title_activity_contactame">ContactameActivity</string>
 
 
 </resources>
