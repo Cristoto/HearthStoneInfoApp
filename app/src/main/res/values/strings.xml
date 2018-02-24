@@ -73,5 +73,11 @@
     <string name="ver_carta_button">Eliminar</string>
     <string name="title_activity_contactame">ContactameActivity</string>
 
+    <string name="contactame_botona">Enviar</string>
+    <string name="contactame_telefono_text">Teléfono:</string>
+    <string name="contactame_telefono_hint">Número de teléfono</string>
+    <string name="contactame_mensaje_text">Mensaje:</string>
+    <string name="contactame_mensaje_hint">Texto del mensaje</string>
+
 
 </resources>
