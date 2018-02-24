@@ -37,7 +37,10 @@ public class VerCarta extends AppCompatActivity {
         rellenarCarta(carta);
     }
 
-
+    /**
+     * Rellena todos los campos de la carta en la interfaz.
+     * @param c Carta del que se saca la información.
+     */
     public void rellenarCarta(Carta c){
 
         nombreTextView.setText(c.getNombre());
@@ -46,6 +49,10 @@ public class VerCarta extends AppCompatActivity {
 
     }
 
+    /**
+     * Elimina la carta que se está viendo.
+     * @param view
+     */
     public void onEliminarButtonAction(View view){
 
         ConnSQLiteHelper c = new ConnSQLiteHelper(this);

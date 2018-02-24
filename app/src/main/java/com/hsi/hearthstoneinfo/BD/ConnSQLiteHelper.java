@@ -14,10 +14,10 @@ import java.util.ArrayList;
 
 /**
  * Created by Carlos - xibhu on 20/02/2018.
+ * Clase que hereda de SQLiteOpenHelper para poder utilizar la base de datos interna.
+ * Conecta con la base de datos, y desde aquí se realizan todas las funciones que interactuan con la base de datos.
  */
 
-
-//TODO HACER QUE LAS CLASES RECIBAN clases MAZO Y CARTA para hacer los getters
 public class ConnSQLiteHelper extends SQLiteOpenHelper {
 
     /**
@@ -147,9 +147,6 @@ public class ConnSQLiteHelper extends SQLiteOpenHelper {
         getWritableDatabase().update(InfoBD.MAZO_TABLA, values, InfoBD.MAZO_ID + "=?", parametros);
         close();
     }
-
-
-
 
     //FUNCIONES DE CARTA
 

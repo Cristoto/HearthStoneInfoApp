@@ -149,6 +149,7 @@ public class CartasActivity extends AppCompatActivity
 
     /**
      * Botón para insertar una nueva carta en un mazo concreto.
+     * Se realizan todas las comprobaciones que son necesarias.
      * @param view
      */
     public void onInsertarButtonAction(View view){

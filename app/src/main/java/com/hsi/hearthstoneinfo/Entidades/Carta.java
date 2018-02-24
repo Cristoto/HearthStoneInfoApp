@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Created by Carlos - xibhu on 20/02/2018.
+ * Clase para mapear el objeto CARTA.
  */
 
 public class Carta implements Serializable{

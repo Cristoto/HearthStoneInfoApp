@@ -95,6 +95,8 @@ public class MazosActivity extends AppCompatActivity
 
             }
         });
+
+
         /**
          * Listener para el ListView, para cuando se selecciona un item.
          */
@@ -102,11 +104,8 @@ public class MazosActivity extends AppCompatActivity
             //Se crea una carta y se envía a la función verCarta.
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
                 Carta c = (Carta)adapterView.getItemAtPosition(i);
-
                 verCarta(c);
-
             }
         });
 

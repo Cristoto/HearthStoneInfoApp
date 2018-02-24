@@ -19,6 +19,12 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
 
+    /**
+     * Variable extremadamente necesaria, en caso de no estar, el sonido de inicio se ejecuta dos veces.
+     * Con esta variable se consigue que eso no suceda.
+     */
+    private static boolean iniciado = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +35,11 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
 
-                mediaPlayer.start();
+                if (iniciado){
+                    mediaPlayer.start();
+                    iniciado = false;
+                }
+
             }
         });
 

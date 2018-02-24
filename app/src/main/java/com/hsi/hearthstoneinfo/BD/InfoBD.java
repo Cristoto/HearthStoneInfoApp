@@ -2,6 +2,7 @@ package com.hsi.hearthstoneinfo.BD;
 
 /**
  * Created by Carlos - xibhu on 20/02/2018.
+ * Clase para reutilizar los nombres de las tablas, columnas, y tener los strings necesarios para la creación y eliminación de la base de datos.
  */
 
 public class InfoBD {

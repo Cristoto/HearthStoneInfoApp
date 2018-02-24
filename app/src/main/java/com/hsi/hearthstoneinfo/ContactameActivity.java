@@ -45,6 +45,7 @@ public class ContactameActivity extends AppCompatActivity
 
     /**
      * Evento para el botón de enviar, recoge los datos y los manda a la aplicación por defecto de SMS.
+     * Se realizan todas las comprobaciones.
      * @param view
      */
     public void enviarBtnOnClick(View view){
